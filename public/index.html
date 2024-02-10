@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/handlebars.js"></script>
+  <script type="module" src="javascripts/contact_manager.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>Contact Manager</h1>
+  </div>
+  
+  <div class="container">
+    <div class="header-actions">
+      <button class="add-button">Add Contact</button>
+      <div class="search-bar">
+        <input type="search" placeholder="Search">
+      </div>
+    </div>
+    
+    <!-- No Contacts Message -->
+    <div class="no-contacts">
+      <p>There is no contacts.</p>
+      <button class="add-button">Add Contact</button>
+    </div>
+
+    <div class="not-found">
+      <p></p>
+    </div>
+
+    <button type="button" id="back-button" class="button-secondary hidden">Back</button>
+    <div class="contact-list"></div>
+
+    <!-- Add Contact Form (Hidden Initially) -->
+    <div id="add-contact-form" class="hidden">
+      <h2>Add Contact</h2>
+      <form>
+        <div>
+          <label for="name">Full Name:</label>
+          <input type="text" id="full_name" name="full_name" placeholder="Full Name">
+          <p class="error-message hidden"></p>
+        </div>
+        <div>
+          <label for="phone_number">Phone Number:</label>
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890">
+          <p class="error-message hidden"></p>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="email@email.com">
+          <p class="error-message hidden"></p>
+        </div>
+        
+        <!-- Tags Section -->
+        <fieldset>
+          <legend>Tags</legend>
+          <div id="tags_container">
+          <label><input type="checkbox" name="tags" value="marketing">Marketing</label>
+          <label><input type="checkbox" name="tags" value="sales"> Sales</label>
+          <label><input type="checkbox" name="tags" value="engineering"> Engineering</label>
+          <label><input type="checkbox" name="tags" value="admin">Admin</label>
+          <label><input type="checkbox" name="tags" value="customer service"> Customer Service</label>
+          </div>
+        </fieldset>
+        <div>
+          <label for="new_tag">New Tag:</label>
+          <input type="text" id="new_tag" name="new_tag" placeholder="Enter new tag">
+          <button type="button" id="add_tag_button" class="button-secondary">Add New Tag</button>
+          <p class="error-message hidden" id="tag_error_message"></p>
+        </div>
+        
+        <button type="submit" class="submit-button">Submit</button>
+        <button type="button" class="cancel-button">Cancel</button>
+      </form>
+    </div>
+
+    <div id="edit-contact-form" class="hidden">
+      <h2>Edit Contact</h2>
+      <form>
+        <div>
+          <label for="name">Full Name:</label>
+          <input type="text" id="full_name" name="full_name" placeholder="Full Name">
+          <p class="error-message hidden"></p>
+        </div>
+        <div>
+          <label for="phone_number">Phone Number:</label>
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890">
+          <p class="error-message hidden"></p>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="email@email.com">
+          <p class="error-message hidden"></p>
+        </div>
+        
+        <!-- Tags Section -->
+        <fieldset>
+          <legend>Tags</legend>
+          <div id="tags_container">
+          <label><input type="checkbox" name="tags" value="marketing">Marketing</label>
+          <label><input type="checkbox" name="tags" value="sales"> Sales</label>
+          <label><input type="checkbox" name="tags" value="engineering"> Engineering</label>
+          <label><input type="checkbox" name="tags" value="admin">Admin</label>
+          <label><input type="checkbox" name="tags" value="customer service"> Customer Service</label>
+          </div>
+        </fieldset>
+        <div>
+          <label for="new_tag">New Tag:</label>
+          <input type="text" id="new_tag" name="new_tag" placeholder="Enter new tag">
+          <button type="button" id="add_tag_button" class="button-secondary">Add New Tag</button>
+          <p class="error-message hidden" id="tag_error_message"></p>
+        </div>
+        
+        <button type="submit" class="submit-button">Submit</button>
+        <button type="button" class="cancel-button">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Contact List -->
+    <script id="contact-list-template" type="text/x-handlebars-template">
+      {{#each contacts}}
+        <div class="contact-item" data-id="{{id}}">
+          <div class="contact-details">
+            <p><strong>{{this.full_name}}</strong></p>
+            <p>ID: {{this.id}}</p>
+            <p>Phone Number: {{this.phone_number}}</p>
+            <p>Email: {{this.email}}</p>
+            <p id="tags">Tags: {{> tags tags=this.tags}}</p>
+            <button class="button-secondary edit">Edit</button>
+            <button class="button-secondary delete">Delete</button>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <script id="tags-template" type="text/x-handlebars-template">
+      {{#each tags}}
+        <a href="#" class="tag">{{this}}</a>
+      {{/each}}
+    </script>
+  </div>
+  <footer>
+    <p>Developed By Harold Camacho</p>
+  </footer>
+</body>
+</html>
