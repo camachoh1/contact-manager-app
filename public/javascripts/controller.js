@@ -123,7 +123,7 @@ export class Controller {
     try {
       await this.model.deleteContact(id);
     } catch(error) {
-      alert('Error Deleting:', error);
+      console.error('Error Deleting:', error);
     }
   }
 
