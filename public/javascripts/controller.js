@@ -24,7 +24,6 @@ export class Controller {
   handleAddTag(newTag, formId) {
     if (newTag.length === 0) {return}
     const existingTags = this.model.getCurrentTags();
-    console.log(existingTags)
     if (!existingTags.includes(newTag.toLowerCase())) {
       this.view.hideNewTagError(formId);
       this.view.addTag(newTag, formId);

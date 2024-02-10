@@ -3,7 +3,7 @@ export class Model {
   constructor() {
     this.lastId = 0;
     this.contacts = [];
-    this.defaultTags = ['marketing', 'sales', 'engineering', 'admin', 'customer service', ];
+    this.defaultTags = ['marketing', 'sales', 'engineering', 'admin', 'customer service'];
     this.currentTags = [];
   }
 
