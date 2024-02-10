@@ -13,7 +13,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* New styles for the header actions */
+
 .header-actions {
   display: flex;
   justify-content: space-between;
@@ -69,12 +69,11 @@ body {
   cursor: pointer;
 }
 
-/* Ensure consistency for all buttons, adjusting .button-primary if needed */
 .submit-button, .cancel-button, .add-button {
-  display: inline-block; /* Aligns button styling with your setup */
-  text-align: center; /* Centers the button text */
-  width: auto; /* Allows button width to fit its content */
-  margin-top: 10px; /* Adds space above the button, separating it from form elements */
+  display: inline-block; 
+  text-align: center; 
+  width: auto; 
+  margin-top: 10px;  
   padding: 10px 20px;
   background-color: #62258d;
   color: white;
@@ -100,18 +99,16 @@ body {
   padding: 20px;
 }
 
-
-/* Ensure form inputs match the style of your search bar */
 form input[type="text"],
 form input[type="email"],
 form input[type="phone"],
 form select {
   padding: 10px;
-  width: 100%; /* Makes input fields take full width of the form */
-  margin-bottom: 10px; /* Adds some space between the form elements */
+  width: 100%; 
+  margin-bottom: 10px; 
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+  box-sizing: border-box; 
 }
 
 form input.error {
@@ -124,25 +121,24 @@ form p.error-message {
   color: red
 }
 
-/* Style for checkboxes - assuming your tags will use checkboxes */
 form input[type="checkbox"] {
   margin-right: 5px;
 }
 
-/* Labels for checkboxes to ensure they match the page's styling */
+
 form label {
-  display: block; /* Makes each label+checkbox appear on a new line */
-  margin-bottom: 5px; /* Adds some space between each label+checkbox */
-  color: #333; /* Ensures text color matches your overall design */
-  cursor: pointer; /* Indicates that the label is clickable */
+  display: block; 
+  margin-bottom: 5px; 
+  color: #333; 
+  cursor: pointer; 
 }
 
-/* Adjusting fieldset and legend for a cohesive look */
+
 fieldset {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px; /* Adds space between this and next form element */
+  margin-bottom: 10px; 
 }
 
 #tags_container {
@@ -156,9 +152,9 @@ fieldset {
 }
 
 legend {
-  color: #333; /* Text color for the legend */
-  padding: 0 10px; /* Adds some padding around the text */
-  width: auto; /* Allows the legend to fit the content's size */
+  color: #333; 
+  padding: 0 10px; 
+  width: auto; 
 }
 
 footer {
